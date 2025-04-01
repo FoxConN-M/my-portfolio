@@ -1,0 +1,220 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #111110;
+  margin: 0;
+  overflow: hidden;
+  user-select: none;
+}
+
+#cover {
+  width: 100vw;
+  height: 100vh;
+  background-color: #111110;
+  position: absolute;
+  z-index: 10;
+  animation: transition 1s forwards;
+  bottom: 100%;
+}
+
+@keyframes transition {
+  from {
+    bottom: 0%;
+  }
+  to {
+    bottom: 100%;
+  }
+}
+
+#image-track {
+  display: flex;
+  gap: 2vmin;
+  position: absolute;
+  left: 50%;
+  transform: translate(0%, 40%);
+  animation: slideIn 2s forwards;
+  z-index: 3;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translate(-100%, 40%);
+  }
+  100% {
+    transform: translate(0%, 40%);
+  }
+}
+
+#image-track > .image {
+  width: 40vmin;
+  height: 56vmin;
+  object-fit: cover;
+  object-position: 100% 50%;
+  user-select: none;
+  transition: transform 0.3s ease-in-out;
+  animation: slideWithin 2s forwards;
+}
+
+@keyframes slideWithin {
+  0% {
+    object-position: 0% 50%;
+  }
+  100% {
+    object-position: 100% 50%;
+  }
+}
+
+#upperMenu {
+  z-index: 101;
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  display: flex;
+  width: 100vw;
+  height: 7vh;
+  justify-content: center;
+  color: darkgrey;
+  font-variant-position: super;
+  letter-spacing: 1vmin;
+  gap: 4vmin;
+  padding-top: 4vmin;
+}
+
+#upperMenuBackground {
+  z-index: 100;
+  position: absolute;
+  justify-content: center;
+  display: flex;
+  width: 100vw;
+  height: 8vh;
+  background-color: rgba(17, 17, 16, 0.2);
+  filter: blur(1.5rem);
+}
+
+.works {
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  color: darkgrey;
+  font-variant-position: super;
+  letter-spacing: 1vmin;
+  font-weight: bold;
+}
+
+.aboutMe {
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  color: darkgrey;
+  font-variant-position: super;
+  letter-spacing: 1vmin;
+}
+
+#upperMenu > .works:hover {
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+#upperMenu > .aboutMe:hover {
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+#image-full {
+  position: fixed;
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4;
+  transition: all 0.3s ease-in-out;
+}
+
+#image-full img {
+  object-fit: cover;
+  position: absolute;
+  z-index: 1;
+}
+
+#counter {
+  position: fixed;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.8vmin;
+  color: darkgrey;
+  font-variant-position: super;
+  z-index: 1;
+  letter-spacing: 1vmin;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#title {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 6vmin;
+  letter-spacing: 3vmin;
+  color: white;
+  position: absolute;
+  text-decoration: none;
+  top: 45%;
+  z-index: 4;
+  opacity: 0;
+  animation: appear 2s forwards;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    top: 50%;
+  }
+
+  100% {
+    opacity: 1;
+    top: 45%;
+  }
+}
+
+#title:hover {
+  font-weight: bold;
+  transition: all 0.5s ease-in-out;
+}
+
+.subtitle {
+  font-family: "Red Hat Display", sans-serif;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  font-size: 2vmin;
+  letter-spacing: 1vmin;
+  color: white;
+  text-decoration: none;
+  top: 58%;
+  opacity: 0;
+  z-index: 4;
+  animation: appearAfter 3s forwards 1s;
+}
+
+@keyframes appearAfter {
+    0% {
+      opacity: 0;
+      top: 65%;
+    }
+    100% {
+      opacity: 1;
+      top: 58%;
+    }
+}

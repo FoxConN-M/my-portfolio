@@ -1,0 +1,244 @@
+:root{
+  --card-color: #111110;
+}
+
+#about-page {
+  position: absolute;
+  z-index: 20;
+  height: 100vh;
+  width: 100vw;
+  background-color: #111110;
+  margin: 0;
+  animation: slide 1s forwards
+  }
+
+@keyframes slide {
+  0% {
+    bottom: 100%;
+  }
+
+  100% {
+    bottom: 0%;
+  }
+}
+
+#about-me-text {
+  width: 100vw;
+  padding-top: 20vh;
+  color: white;
+  display: flex;
+  opacity: 0;
+  animation: appear 2s forwards 1s;
+}
+
+@keyframes appear {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.text{
+  padding-left: 12vw;
+  width: 40vw;
+  font-family: "Red Hat Display", sans-serif;
+  font-size:16pt;
+  z-index: 21;
+}
+
+.text-cover{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 50vw;
+  background-color: #111110;
+  animation: uncover 9s forwards;
+  z-index: 22;
+}
+
+@keyframes uncover {
+  from{
+    top: 0;
+  }
+  to{
+    top: 100%;
+  }
+}
+
+#big-text{
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 50pt;
+  width: 37vw;
+  height: 100vh;
+  padding-left: 5vw;
+  font-weight: 900;
+  color: white;
+  text-decoration: none;
+  margin: 0;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+
+.word {
+  margin: 0;
+}
+
+.fancy1 {
+  margin: 0;
+  color: white;
+  text-decoration: none;
+  cursor: default;
+}
+
+.fancy2 {
+  margin: 0;
+  color: white;
+  text-decoration: none;
+  cursor: default;
+}
+
+#big-text:has(.fancy1:hover) .word:not(.fancy1){
+  opacity: 0.2;
+  transition: all 0.5s;
+}
+
+#big-text:has(.fancy2:hover) .word:not(.fancy2){
+  opacity: 0.2;
+  transition: all 0.5s;
+}
+
+#cards{
+  position: absolute;
+  left: 5vw;
+  top: 58vh;
+  display: flex;
+  flex-wrap: wrap;
+  height: 30vh;
+  width: 50vw;
+  gap: 1vmin;
+}
+
+#cards:hover > .card > .card-border {
+  opacity: 1;
+}
+
+.card {
+  width: 12vw;
+  height: 20vh;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.card:hover::before{
+  opacity: 1;
+}
+
+.card::before,
+.card > .card-border {
+  opacity: 0;
+  transition: opacity 500ms;
+  border-radius: inherit;
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  z-index: 23;
+}
+
+.card::before{
+  background: radial-gradient(
+    800px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.06),
+    transparent 40%
+  );
+  z-index: 26;
+}
+
+.card > .card-border{
+  background: radial-gradient(
+    400px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.3),
+    transparent 40%
+  );
+  z-index: 24;
+}
+
+.card > .card-content {
+  background-color: rgba(255, 255, 255, 0.06);
+  height: calc(100% - 2px);
+  width: calc(100% - 2px);
+  background-color: var(--card-color);
+  border-radius: inherit;
+  margin: 1px;
+  position: relative;
+  z-index: 25;
+}
+
+.info{
+  color: white;
+  display: grid;
+  position: relative;
+  font-size: 8pt;
+  font-family: "Red Hat Display", sans-serif;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 1vmin;
+  top: 30%;
+}
+
+.info-email{
+  color: white;
+  display: grid;
+  position: relative;
+  font-size: 8pt;
+  font-family: "Red Hat Display", sans-serif;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 1vmin;
+  top: 34%;
+  padding-left: 4%;
+}
+
+.whats-icon {
+  display: grid;
+  position: relative;
+  fill: white;
+  width: 6vmin;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  top: 20%;
+}
+
+.email-icon {
+  display: grid;
+  position: relative;
+  fill: white;
+  width: 6vmin;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  top: 20%;
+}
+
+.link-icon {
+  display: grid;
+  position: relative;
+  fill: white;
+  width: 6vmin;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  top: 20%;
+}
