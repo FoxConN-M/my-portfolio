@@ -167,7 +167,9 @@ function App() {
                 <Link to={expandedImage.link} id="title">
                   <p>{expandedImage.title}</p>
                 </Link>
+                <Link to={expandedImage.link}>
                 <p className="subtitle">SAIBA MAIS</p>
+                </Link>
               </>
             )}
             <img

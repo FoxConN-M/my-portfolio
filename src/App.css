@@ -197,15 +197,17 @@ body {
   font-family: "Red Hat Display", sans-serif;
   position: absolute;
   display: flex;
+  object-position: center;
   justify-content: center;
+  left: 45%;
   font-size: 2vmin;
   letter-spacing: 1vmin;
   color: white;
   text-decoration: none;
-  top: 58%;
+  top: 80%;
   opacity: 0;
   z-index: 4;
-  animation: appearAfter 3s forwards 1s;
+  animation: appearAfter 2s forwards;
 }
 
 @keyframes appearAfter {
